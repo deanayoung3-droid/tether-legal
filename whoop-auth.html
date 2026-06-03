@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Tether — Connecting WHOOP…</title>
+<style>
+  body { background: #000; color: #fff; font-family: -apple-system, sans-serif; display: grid; place-items: center; min-height: 100vh; margin: 0; text-align: center; }
+  h1 { font-size: 18px; font-weight: 600; }
+  p { color: #888; font-size: 13px; }
+</style>
+</head>
+<body>
+  <div>
+    <h1>Returning to Tether…</h1>
+    <p>If this page doesn't redirect automatically, open Tether manually.</p>
+  </div>
+  <script>
+    // Bounce all query params to the tether:// custom URL scheme
+    const params = window.location.search;
+    window.location.replace('tether://whoop-auth' + params);
+  </script>
+</body>
+</html>
