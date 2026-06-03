@@ -2,22 +2,57 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Tether — Connecting WHOOP…</title>
 <style>
-  body { background: #000; color: #fff; font-family: -apple-system, sans-serif; display: grid; place-items: center; min-height: 100vh; margin: 0; text-align: center; }
-  h1 { font-size: 18px; font-weight: 600; }
-  p { color: #888; font-size: 13px; }
+  body {
+    background: #000; color: #fff;
+    font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+    margin: 0; padding: 40px 24px;
+    min-height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center;
+    text-align: center;
+  }
+  h1 { font-size: 18px; font-weight: 600; margin: 0 0 8px; }
+  p { color: #aaa; font-size: 13px; margin: 4px 0; }
+  button {
+    background: #fff; color: #000; border: 0;
+    padding: 14px 28px; border-radius: 999px;
+    font-size: 15px; font-weight: 600; margin-top: 28px;
+    cursor: pointer;
+  }
+  .debug {
+    color: #ff6b6b; font-size: 11px;
+    background: #1a0a0a; border: 1px solid #4a1c1c;
+    padding: 12px; border-radius: 8px;
+    margin-top: 24px; font-family: ui-monospace, monospace;
+    max-width: 400px; word-break: break-all;
+  }
 </style>
 </head>
 <body>
-  <div>
-    <h1>Returning to Tether…</h1>
-    <p>If this page doesn't redirect automatically, open Tether manually.</p>
-  </div>
+  <h1>Returning to Tether…</h1>
+  <p id="msg">If nothing happens, tap below.</p>
+  <button onclick="bounce()">OPEN TETHER</button>
+  <div id="debug" class="debug" style="display:none"></div>
+
   <script>
-    // Bounce all query params to the tether:// custom URL scheme
     const params = window.location.search;
-    window.location.replace('tether://whoop-auth' + params);
+    const dest = 'tether://whoop-auth' + params;
+
+    // Show any error returned by Whoop so user can screenshot it
+    const urlParams = new URLSearchParams(params);
+    if (urlParams.has('error')) {
+      const err = urlParams.get('error');
+      const desc = urlParams.get('error_description') || '';
+      const dbg = document.getElementById('debug');
+      dbg.style.display = 'block';
+      dbg.textContent = 'Whoop error: ' + err + ' — ' + decodeURIComponent(desc);
+      document.getElementById('msg').textContent = 'Whoop returned an error (see below).';
+    }
+
+    function bounce() { window.location.replace(dest); }
+    // Auto-trigger
+    setTimeout(bounce, 250);
   </script>
 </body>
 </html>
