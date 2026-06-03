@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Privacy Policy — Tether</title>
+<style>
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: #000;
+    color: #fff;
+    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", Inter, system-ui, sans-serif;
+    line-height: 1.7;
+    padding: 60px 24px;
+  }
+  .wrap { max-width: 720px; margin: 0 auto; }
+  h1 { font-size: 32px; font-weight: 800; letter-spacing: -0.02em; margin: 0 0 8px; }
+  h2 { font-size: 18px; font-weight: 700; margin: 36px 0 12px; color: #fff; }
+  h3 { font-size: 15px; font-weight: 600; margin: 20px 0 8px; color: #ddd; }
+  p, li { color: #cfcfcf; font-size: 15px; }
+  ul { padding-left: 22px; }
+  li { margin-bottom: 6px; }
+  .meta { color: #888; font-size: 13px; margin: 0 0 32px; }
+  a { color: #fff; text-decoration: underline; text-decoration-color: #555; }
+  .back { display: inline-block; margin-bottom: 30px; color: #888; text-decoration: none; font-size: 13px; }
+  .back:hover { color: #fff; }
+  .pill {
+    display: inline-block;
+    background: #0e2e1a;
+    color: #6df0a4;
+    padding: 4px 10px;
+    border-radius: 999px;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    margin-right: 6px;
+  }
+  hr { border: none; border-top: 1px solid #1a1a1a; margin: 40px 0; }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <a class="back" href="./">← Back</a>
+    <h1>Privacy Policy</h1>
+    <p class="meta">Effective: June 3, 2026 · Last updated: June 3, 2026</p>
+
+    <p><span class="pill">TL;DR</span> Tether reads your health data on-device, only sends meal/fridge images to OpenAI when you explicitly take a photo, and never sells your information.</p>
+
+    <h2>1. Who we are</h2>
+    <p>"Tether" (the "App") is an iOS application that aggregates personal health and fitness data into a single dashboard. This policy explains what data Tether collects, how it's used, and your rights.</p>
+
+    <h2>2. Data we access</h2>
+
+    <h3>Apple Health (HealthKit)</h3>
+    <p>With your permission, Tether reads the following from Apple Health: steps, active energy, resting energy, heart rate, resting heart rate, heart rate variability (HRV), blood oxygen, respiratory rate, sleep analysis, workouts, distance, flights climbed, and exercise time. <strong>HealthKit data never leaves your device.</strong></p>
+
+    <h3>Third-Party Integrations (Strava, WHOOP, Oura, Fitbit, etc.)</h3>
+    <p>When you connect a third-party service, Tether stores an OAuth access token locally on your device and uses it to fetch your activity, recovery, sleep, and workout data directly from the provider. We do not proxy this data through a server.</p>
+
+    <h3>Location</h3>
+    <p>If you start a GPS-tracked workout, Tether uses your device's location to record route, distance, and pace. Location is recorded only while a workout is active and is stored locally with the workout.</p>
+
+    <h3>Photos</h3>
+    <p>When you take a photo of a meal or your fridge:</p>
+    <ul>
+      <li>The image is sent securely (HTTPS) to OpenAI for nutritional or recipe analysis.</li>
+      <li>OpenAI processes the image and returns a response. Per OpenAI's API data policy, images submitted via the API are <strong>not used to train OpenAI models</strong>.</li>
+      <li>The image is stored locally on your device alongside the meal entry. We do not retain a copy on any server.</li>
+    </ul>
+
+    <h3>Profile Information</h3>
+    <p>Your name, profile icon, connected device list, and activity goals are stored locally using SwiftData. None of this leaves your device.</p>
+
+    <h2>3. Data we do <em>not</em> collect</h2>
+    <ul>
+      <li>We do not have user accounts or a server-side database.</li>
+      <li>We do not use third-party analytics or advertising SDKs.</li>
+      <li>We do not track you across other apps or websites.</li>
+      <li>We do not sell your data. Ever.</li>
+    </ul>
+
+    <h2>4. How AI features work</h2>
+    <p>Tether uses OpenAI's API for three optional features:</p>
+    <ul>
+      <li><strong>Meal analysis</strong> — when you photograph a meal, the image is sent to OpenAI to estimate calories and macros.</li>
+      <li><strong>Fridge recipes</strong> — when you photograph your fridge, the image is sent to OpenAI to suggest a recipe.</li>
+      <li><strong>Daily briefs</strong> — a short text summary of your day's metrics (steps, calories, sleep, meals) is sent to OpenAI to generate the dashboard summary. No identifying information is included.</li>
+    </ul>
+    <p>OpenAI's data usage policy is available at <a href="https://openai.com/policies/api-data-usage-policies" target="_blank">openai.com/policies/api-data-usage-policies</a>.</p>
+
+    <h2>5. Notifications</h2>
+    <p>If you grant notification permission, Tether schedules local reminders (morning brief, evening brief, meal reminders, stand reminders). These are scheduled and delivered entirely on-device.</p>
+
+    <h2>6. Data retention</h2>
+    <p>All Tether data lives on your device. Uninstalling the app deletes all stored data (meals, profile, goals, OAuth tokens). To disconnect a third-party integration without uninstalling, use the Devices section in the app.</p>
+
+    <h2>7. Children</h2>
+    <p>Tether is not directed to children under 13 and we do not knowingly collect data from children. If you are a parent and believe your child has provided us data, please contact us.</p>
+
+    <h2>8. Your rights</h2>
+    <p>Because all data is stored locally on your device, you have direct and complete control. You can delete any meal, disconnect any integration, revoke any permission (HealthKit, Location, Camera, Notifications) at any time from iOS Settings.</p>
+
+    <h2>9. Changes to this policy</h2>
+    <p>We may update this policy as the app evolves. The "Last updated" date above will reflect any changes. Material changes will be announced in-app.</p>
+
+    <h2>10. Contact</h2>
+    <p>Questions, concerns, or data-access requests: <a href="mailto:deanayoung3@gmail.com">deanayoung3@gmail.com</a></p>
+
+    <hr>
+    <p style="color: #666; font-size: 13px; text-align: center;">© 2026 Tether</p>
+  </div>
+</body>
+</html>
